@@ -1,5 +1,7 @@
 const path = require('path');
+const gameLogic = require('./gameLogicController');
 
 exports.init = (req, res, next) => {
-  res.status(200).sendFile(path.resolve(__dirname + '/../views/index.html'));
-}
+  gameLogic.init();
+  res.status(200).render('index');
+};
